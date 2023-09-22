@@ -13,6 +13,7 @@
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
    rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 <title>Insert title here</title>
 </head>
 <style>
@@ -31,6 +32,29 @@ select.box{
 option{
 	font-size: 16px;
 }
+
+.inputform{
+	width: 125vh;
+	height: 83vh; 
+	border: 0.5vh solid gold; 
+	background-color: white; 
+	border-radius: 3vh; 
+	margin-left: 0.75vh;
+}
+
+#topline{ 
+	margin-left: 2vh;
+	margin-top: 2vh;
+	/* border: 2px solid red; */
+}
+
+#topDelIcon{
+	/* border: 2px solid red; */
+	float: right;
+	margin-right: 20px;
+	
+}
+
 </style>
 <script type="text/javascript">
 $(function(){
@@ -64,6 +88,11 @@ $(function(){
 	        $("#pwConfirm").css("color", "green");
 	    }
 	    
+	});
+	
+	//마이페이지 x버튼 누르면 메인페이지로 이동
+	$("#topDelIcon").click(function(){
+		location.href="index.jsp";
 	});
 	
 	
@@ -127,49 +156,71 @@ $("#domain-list").change(function(){
 
 </script>
 <%
-	String root=request.getContextPath();
-	
-	//dao_mypage 회원 num 가져오기
-	String uid=(String)session.getAttribute("id");
-	UserDao dao=new UserDao();
-	UserDto dto=dao.getUserInfo(uid);
-	
-	//이메일,핸드폰 값은 split으로 나누기
-	String uemail=dto.getU_email();
-	String[] uemailSplit=uemail.split("@");
-	String uemail1=uemailSplit[0];
-	String uemail2=uemailSplit[1];
-	
-	String uhp=dto.getU_hp();
-	String[] uhpSplit=uhp.split("-");
-	String uhp1=uhpSplit[0];
-	String uhp2=uhpSplit[1];
-	String uhp3=uhpSplit[2];
+   String root=request.getContextPath();
+   
+   //dao_mypage 회원 num 가져오기
+   String uid=(String)session.getAttribute("id");
+   UserDao dao=new UserDao();
+   UserDto dto=dao.getUserInfo(uid);
+   
+   //이메일,핸드폰 값은 split으로 나누기
+   String uemail=dto.getU_email();
+   String[] uemailSplit=uemail.split("@");
+   String uemail1=uemailSplit[0];
+   String uemail2=uemailSplit[1];
+   
+   //네이버 로그인 시, 핸드폰 번호 못 가져와서 마이페이지 안 들어가짐
+   String uhp=dto.getU_hp();
+   if(uhp.equals("")){
+      uhp="none";
+   }
+   String[] uhpSplit=new String[3];
+   System.out.println(uhp);
+   String uhp1="",uhp2="",uhp3="";
+   if(uhp!="none"){
+      uhpSplit=uhp.split("-");
+      uhp1=uhpSplit[0];
+      uhp2=uhpSplit[1];
+      uhp3=uhpSplit[2];
+   }
 %>
 <body>
-<div class="inputform" style="width:1000px;">
+<div class="inputform" style="width:1000px; height: 450px;">
 	<form action="<%=root %>/mypage/mypageAction.jsp" method="post" id="userForm">
 	<input type="hidden" name="uid" value="<%=uid%>">
-		<table class="table table-bordered">
-		<caption align="top"><b>개인정보 수정</b></caption>
+		<table class="table table-bordered" style="width: 130vh; margin-top: 2vh; margin-left: 2vh;">
+		<div id="topline">
+			<span align="top" id="topfont"><b>개인정보 수정</b></span><span id="topDelIcon"><i class="bi bi-x-circle" style="font-size: 1.3em; color: gray; cursor: pointer;"></i></span>
+		</div>
+		<hr style="color: gold; border: 0.2vh solid gold; width: 130vh; margin-left: 2vh;">
 			<tr>
-				<td style="width: 150px;"><b>아이디<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td class="formlist" style="width: 150px; background-color: #FFFF99;"><b>아이디<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="text" class="userId" name="userId" placeholder="아이디" required="required" value="<%=uid%>" readonly>
 					
 					<span class="idsuccess"></span>	
 				</td>
 			</tr>
+			
+			<!--네이버로그인_마이페이지 비밀번호 tr(행) 안 보이게_uid 가져와서 naver.com로 된 아이디면 안되게...-->
+			<%	System.out.println("pass=["+dto.getU_pass()+"]");
+				if(dto.getU_pass()!=null){%>
+					
 			<tr>
-				<td style="width:150px;"><b>비밀번호<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td class="formlist" style="width:150px; background-color: #FFFF99;"><b>비밀번호<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
-					<input type="password" id="userpass1" name="userpass1" placeholder="비밀번호" required="required" value="">
+					<input class="" type="password" id="userpass1" name="userpass1" placeholder="비밀번호" required="required" value="">
 					<input type="password" id="userpass2" name="userpass2" placeholder="비밀번호 확인" required="required" value="">
 					<span id="pwConfirm"></span>
 				</td>
 			</tr>
+					
+			<%}else{//네이버 로그인한 고객인경우%>
+				<input type="hidden" name="userpass2" value="<%=dto.getU_pass()%>">
+			<%}
+			%> 
 			<tr>
-				<td style="width:150px;"><b>이메일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td class="formlist" style="width:150px; background-color: #FFFF99;"><b>이메일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="text" id="useremail1" name="useremail1" placeholder="이메일" required="required" value="<%=uemail1%>">&nbsp;@
 					<input type="text" class="box emailbox1"  placeholder="선택하기"  name="useremail2" value="<%=uemail2%>">
@@ -184,19 +235,33 @@ $("#domain-list").change(function(){
 				</td>
 			</tr>
 			<tr>
-				<td style="width: 150px;"><b>이름<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td class="formlist" style="width: 150px; background-color: #FFFF99;"><b>이름<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="text" id="username" name="username" placeholder="이름" required="required" value="<%=dto.getU_name()%>" readonly>
 				</td>
 			</tr>
+			<!--네이버로그인_마이페이지 생년월일...-->
+			<%//일반회원인 경우 생년월일 변경불가 readonly
+				if(dto.getU_pass()!=null){%>
+					
 			<tr>
-				<td style="width: 150px;"><b>생년월일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td class="formlist" style="width: 150px; background-color: #FFFF99;"><b>생년월일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="date" name="userbirth" id="userbirth" value="<%=dto.getU_birth()%>" readonly>
 				</td>
 			</tr>
+					
+			<%}else{//네이버 로그인한 고객인경우 생년월일 변경가능%>
+			<tr>
+				<td class="formlist" style="width: 150px; background-color: #FFFF99;"><b>생년월일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td>
+					<input type="date" name="userbirth" id="userbirth" value="">
+				</td>
+			</tr>
+			<%}
+			%> 
 			<tr valign="middle">
-					<td style="width: 250px;"><b>휴대전화<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+					<td style="width: 250px; background-color: #FFFF99;"><b>휴대전화<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 					<td>
 						<input type="text" style="width: 100px;" maxlength="3" required="required" name="userhp1" id="userhp1" value="<%=uhp1%>">&nbsp;-
 						<input type="text" style="width: 100px;" maxlength="4" required="required" name="userhp2" id="userhp2" value="<%=uhp2%>">&nbsp;-
@@ -205,7 +270,7 @@ $("#domain-list").change(function(){
 				</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" class="btn btn-outline-info" value="정보수정">
+					<input type="submit" class="btn btn-outline-warning" value="정보수정">
 				</td>
 			</tr>
 		</table>

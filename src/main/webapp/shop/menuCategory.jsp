@@ -26,5 +26,4 @@
 		arr.add(ob);
 	}
 %>
-
 <%=arr.toString()%>

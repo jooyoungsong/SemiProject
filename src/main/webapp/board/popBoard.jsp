@@ -239,7 +239,8 @@
                   <td>
                      <span style="float: left; margin-left: 7.5vh; font-size: 2.25vh;"><%=no--%></span>
                      
-                     <a href="<%=root%>/subPage.jsp?main=board/detail.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>" class="title" num="<%=dto.getNum()%>">
+                     <a href="<%=root%>/subPage.jsp?main=board/detail.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>"
+                     	class="title" num="<%=dto.getNum()%>">
                      <span style="float: left; margin-left: 7.5vh; font-size: 2.25vh;">
                         <%=pop>=10?"<img src='image/star.png' style='width: 2.5vh;'>":""%>
                         [<%=dto.getExpress() %>]

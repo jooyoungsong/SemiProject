@@ -121,8 +121,6 @@
 				v.b_pass1.value="";
 				v.b_pass.focus();
 				return false;
-				/* $("#passprint").text("비밀번호가 다릅니다");
-				$("#passprint").css("color","red"); */
 			}
 			else if(!passwordRegex.test(v.b_pass.value))
 			{

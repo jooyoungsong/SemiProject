@@ -155,8 +155,10 @@
    <span align="top" style="font-size: 4vh; line-height: 5vh; margin-left: 1vh;"><b>자유게시판</b></span><br>
    <table class="table table-striped" style="width: 100%;">
    	  <div style="float: left;">
-   	  	  <button type="button" class="btn btn-outline-secondary btn-ghost btn-open-line" onclick="location.href='subPage.jsp?main=board/freeBoard.jsp'">전체글</button>
-	      <button type="button" class="btn btn-outline-secondary btn-ghost btn-open-line" onclick="location.href='subPage.jsp?main=board/popBoard.jsp'">인기글</button>
+   	  	  <button type="button" class="btn btn-outline-secondary btn-ghost btn-open-line"
+   	  	  	onclick="location.href='subPage.jsp?main=board/freeBoard.jsp'">전체글</button>
+	      <button type="button" class="btn btn-outline-secondary btn-ghost btn-open-line"
+	      	onclick="location.href='subPage.jsp?main=board/popBoard.jsp'">인기글</button>
 	   </div>
 	   <div style="float: right;">
 	      <select name="listcnt" style="margin-right: 1.25vh; width: 7vh; height: 4vh;" class="listcnt">
@@ -207,7 +209,8 @@
                      <b>
                      <span style="float: left; margin-left: 5.625vh; font-size: 2.25vh;">[공지]</span>
                      
-                     <a href="<%=root%>/subPage.jsp?main=board/detail.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>" class="notetitle" num="<%=dto.getNum()%>">
+                     <a href="<%=root%>/subPage.jsp?main=board/detail.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>"
+                     	class="notetitle" num="<%=dto.getNum()%>">
                      <span style="float: left; margin-left: 5vh; font-size: 2.25vh;">[<%=dto.getExpress() %>]</span>
                      <span style="float: left; margin-left: 1.25vh; font-size: 2.25vh;"><%=dto.getTitle() %></span>
                      </a>
@@ -237,7 +240,8 @@
                   <td>
                      <span style="float: left; margin-left: 7.5vh; font-size: 2.25vh;"><%=no--%></span>
                      
-                     <a href="<%=root%>/subPage.jsp?main=board/detail.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>" class="title" num="<%=dto.getNum()%>">
+                     <a href="<%=root%>/subPage.jsp?main=board/detail.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>"
+                     	class="title" num="<%=dto.getNum()%>">
                      <span style="float: left; margin-left: 7.5vh; font-size: 2.25vh;">
                         <%=pop>=10?"<img src='image/star.png' style='width: 2.5vh;'>":""%>
                         [<%=dto.getExpress() %>]

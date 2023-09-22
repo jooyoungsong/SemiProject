@@ -42,6 +42,11 @@ option{
 	border-radius: 3vh; 
 	margin-left: 0.75vh;
 }
+
+#topfont{ 
+	margin-left: 2vh;
+	margin-top: 2vh;
+}
 </style>
 <script type="text/javascript">
 
@@ -184,7 +189,7 @@ $(function(){
 			
 		} else{
 				$(".emailbox1").val($(this).val());
-				alert($(".emailbox1").val());
+			/* 	alert($(".emailbox1").val()); */
 		}
 		
 	});
@@ -210,11 +215,11 @@ $(function(){
 <body>
 <div class="inputform"> <!--style="width:1000px;"  -->
 	<form action="<%=root %>/userRegistration/userRAction.jsp" method="post">
-		<table class="table table-bordered">
-		<caption align="top"><b>개인 회원가입</b></caption>
+		<table class="table table-bordered" style="width: 120vh; margin-top: 2vh; margin-left: 2vh;">
+		<div align="top" id="topfont"><b>개인 회원가입</b></div>
 		<hr style="color: gold; border: 0.2vh solid gold; width: 120vh; margin-left: 2vh;">
 			<tr>
-				<td style="width: 150px;"><b>아이디<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td style="width: 150px; background-color: #FFFF99;"><b>아이디<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="text" class="userId" name="userId" placeholder="아이디" required="required">
 					
@@ -222,7 +227,7 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td style="width:150px;"><b>비밀번호<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td style="width:150px; background-color: #FFFF99;"><b>비밀번호<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="password" id="userpass1" name="userpass1" placeholder="비밀번호" required="required" value="">
 					<input type="password" id="userpass2" name="userpass2" placeholder="비밀번호 확인" required="required" value="">
@@ -230,7 +235,7 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td style="width:150px;"><b>이메일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td style="width:150px; background-color: #FFFF99;"><b>이메일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="text" id="useremail1" name="useremail1" placeholder="이메일" required="required">&nbsp;@
 					<input type="text" class="box emailbox1"  placeholder="선택하기"  name="useremail2" value="">
@@ -245,19 +250,19 @@ $(function(){
 				</td>
 			</tr>
 			<tr>
-				<td style="width: 150px;"><b>이름<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td style="width: 150px; background-color: #FFFF99;"><b>이름<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="text" id="username" name="username" placeholder="이름" required="required">
 				</td>
 			</tr>
 			<tr>
-				<td style="width: 150px;"><b>생년월일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+				<td style="width: 150px; background-color: #FFFF99;"><b>생년월일<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 				<td>
 					<input type="date" name="userbirth" id="userbirth">
 				</td>
 			</tr>
 			<tr valign="middle">
-					<td style="width: 250px;"><b>휴대전화<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
+					<td style="width: 250px; background-color: #FFFF99;"><b>휴대전화<span style="margin-left: 10px; color: #FF3333">*</span></b></td>
 					<td>
 						<input type="text" style="width: 100px;" maxlength="3" required="required" name="userhp1" id="userhp1">&nbsp;-
 						<input type="text" style="width: 100px;" maxlength="4" required="required" name="userhp2" id="userhp2">&nbsp;-
@@ -266,7 +271,7 @@ $(function(){
 				</tr>
 			<tr>
 				<td colspan="2" align="center">
-					<input type="submit" class="btn btn-outline-info" value="회원가입">
+					<input type="submit" class="btn btn-outline-warning" value="회원가입">
 				</td>
 			</tr>
 		</table>

@@ -26,12 +26,14 @@
 	String userpass=request.getParameter("userpass2");
 	String useremail=request.getParameter("useremail1")+"@"+request.getParameter("useremail2");
 	String userhp=request.getParameter("userhp1")+"-"+request.getParameter("userhp2")+"-"+request.getParameter("userhp3");
+	String userbirth = request.getParameter("userbirth");
 	
 	dto.setNum(num);
 	dto.setU_id(userid);
 	dto.setU_pass(userpass);
 	dto.setU_email(useremail);
 	dto.setU_hp(userhp);
+	dto.setU_birth(userbirth);
 	
 	UserDao dao=new UserDao();
 	dao.updateUserInfo(dto);
