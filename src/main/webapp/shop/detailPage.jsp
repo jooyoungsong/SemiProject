@@ -190,7 +190,7 @@ function list(){
         		<td colspan="2">
         			<br><hr style='width:650px; border:2px solid gray; left:20px;'>
         			<b class="acount" id="alist" style="margin-top: 10px; margin-left:10px;">댓글 <span>0</span></b><br>
-        			<input type="hidden" name="sang_num" id="sang_num" value=<%=sang_num %>>
+        			<input type="hidden" name="sang_num" id="sang_num" value="<%=sang_num %>">
          			<input type="hidden" name="u_id" id="u_id" value="<%=id%>">
          			<%
 					if(idchk==1){

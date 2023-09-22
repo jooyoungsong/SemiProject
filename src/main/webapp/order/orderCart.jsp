@@ -154,14 +154,13 @@ div.allBox{
 			//alert("i="+i);
 			for(var j=1;j<i;j++){
 				var compSang=$(".td"+j+"first").attr("sang_num");
-				//alert(compSang);
-				//alert(sang_num);
+
 				if(sang_num==compSang){
-					//alert("둘이같다");
+
 					var plus=".plus"+j;
 					
 					$(".plusNum").val(plus);
-					//alert($(".plusNum").val());
+
 					plusBtn();
 					return;
 					}
@@ -183,14 +182,11 @@ div.allBox{
 		
 		$(document).on("click",".plus",function(){
 			var su=$(this).parent().find(".su").text();
-			//alert(su);
 			su++;
 			$(this).parent().find(".su").text(su);
 			
 			var price=$(this).parent().parent().find(".price").attr("value");
-			//alert("price="+price);
 			var modPrice=price*su;
-			//alert("modPrice="+modPrice);
 			$(this).parent().parent().find(".price").text(modPrice);
 			
 			totPrice();
@@ -206,9 +202,7 @@ div.allBox{
 				$(this).parent().find(".su").text(su);
 			
 				var price=$(this).parent().parent().find(".price").attr("value");
-				//alert("price="+price);
 				var modPrice=price*su;
-				//alert("modPrice="+modPrice);
 				$(this).parent().parent().find(".price").text(modPrice);
 			}
 			totPrice();
@@ -216,11 +210,6 @@ div.allBox{
 		
 		$(document).on("click",".del",function(){
 			var td=$(this).attr("td");
-			var idx=$("#idx").val();
-			if(idx==0){
-				idx=1;
-			}
-			$("#idx").val(idx);
 			$("."+td).remove();
 			totPrice();
 		})
@@ -234,19 +223,16 @@ div.allBox{
 			var totPrice=$("#total-price").text();
 			var s_id=$("#s_id").val();
 			var u_id='<%=id%>';
-			//alert(u_id);
 			for(var i=0;i<idx;i++){
 				if($(".price"+i).text()==0){
 					continue;
 				}
 				var sangName=$("#td"+i).text();
-				//alert(sangName);
 				var su=$(".td"+i+"su").text();
 				content+=sangName+" : "+su+"<br>";
-				//alert(content);
 			}
 			content+="총 금액 : "+totPrice;
-			//alert(content);
+
 			
 			var today = new Date();
 			var hours = today.getHours(); // 시
@@ -318,7 +304,7 @@ div.allBox{
 			    	//m_redirect_url : '../order/orderCart.jsp' // 예: https://www.my-service.com/payments/complete 
 				}, async function (rsp) { // callback
 					if (rsp.success) { //결제 성공시
-	                	alert(rsp.imp_uid);
+	                	
 	                	$.ajax({
 							type:"get",
 							dataType:"html",
@@ -348,14 +334,14 @@ div.allBox{
 			for(var i=0;i<idx;i++){
 				$(".td"+i).remove();
 			}
-			$("#total-price").text("0");
+			totPrice();
 		})
 	})
 	function plusBtn(){
 		var plusNum=$(".plusNum").val();
 		//alert(plusNum);
 		$(plusNum).click();
-	}
+	} 
 	
 	function totPrice(){
 		var idx=$("#idx").val();
@@ -487,10 +473,8 @@ div.allBox{
 						<button type="button" id="alldel" class="btn btn-danger" style="width: 70px; font-size: 1vh;">전체삭제</button>
 					</td>
 					<td style="width: 130px;">
-						<input type='image' class='addOrder kakao' src='../image/Kakaopay_Logo.png' 
-						name='kakao'>
-						<input type='image' class='addOrder toss' src='../image/Toss_Logo_black.png' 
-    					name='toss'>
+						<input type='image' class='addOrder kakao' src='../image/Kakaopay_Logo.png' name='kakao'>
+						<input type='image' class='addOrder toss' src='../image/Toss_Logo_black.png' name='toss'>
 					</td>
 				</tr>
 			</table>
