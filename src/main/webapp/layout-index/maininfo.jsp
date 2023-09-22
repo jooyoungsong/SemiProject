@@ -46,6 +46,23 @@
       opacity:0;
    }
 }
+.toTop:hover {
+  filter: brightness(90%);
+  animation: flicker 0.5s linear alternate infinite;
+}
+.toBottom:hover {
+  filter: brightness(90%);
+  animation: flicker 0.5s linear alternate infinite;
+}
+@keyframes flicker {
+  0% {
+    filter: brightness(40%);
+  }
+
+  100% {
+    filter: brightness(100%);
+  }
+}
 i{margin: auto;}
 
 .toTop{ border:0.5vh solid white; border-radius:12.5vh; width: 3vh; color: white; margin-top: 6vh; margin-bottom: 1vh; margin-right: auto; margin-left:auto; cursor: pointer; font-size:2vh;}

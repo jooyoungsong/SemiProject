@@ -50,11 +50,11 @@
 
 .toTop:hover {
   filter: brightness(90%);
-  animation: flicker 1s linear alternate infinite;
+  animation: flicker 0.5s linear alternate infinite;
 }
 .toBottom:hover {
   filter: brightness(90%);
-  animation: flicker 1s linear alternate infinite;
+  animation: flicker 0.5s linear alternate infinite;
 }
 @keyframes flicker {
   0% {
@@ -67,10 +67,17 @@
 }
 i{margin: auto;}
 
-.toTop{ border:0.5vh solid black; color: white; background-color: gold; border-radius:12.5vh; width: 3vh; margin-top: 6vh; margin-bottom: 1vh; margin-right: auto; margin-left:auto; cursor: pointer; font-size:2vh;}
-/* .toTop:hover{ color: white; background-color: gray; border:0.5vh solid black;} */
-.toBottom{ border:0.5vh solid black; color: white; background-color: gold; border-radius:12.5vh; width: 3vh; margin-top: 1vh; margin-bottom: 1vh; margin-right: auto; margin-left:auto; cursor: pointer; font-size:2vh;}
-/* .toBottom:hover{ color: white; background-color: gray; border:0.5vh solid black;} */
+.toTop{ border:0.5vh solid black; color: black; 
+background-color: gold; border-radius:12.5vh; 
+width: 3vh; margin-top: 6vh; margin-bottom: 1vh;
+margin-right: auto; margin-left:auto;
+cursor: pointer; font-size:2vh;}
+
+.toBottom{ border:0.5vh solid black; color: black;
+background-color: gold; border-radius:12.5vh;
+width: 3vh; margin-top: 1vh; margin-bottom: 1vh;
+margin-right: auto; margin-left:auto;
+cursor: pointer; font-size:2vh;}
 
 </style>
 <script type="text/javascript">

@@ -20,48 +20,52 @@ html,body{min-height:100%; font-family: 'NanumSquare'; margin:0; padding:0; }
 div,ul,li,dl,dt,dd,p,h2,h3,h4,a,span,form,input, select { margin:0; padding:0; }
 ul,dl,ol { list-style:none; }
 img { max-width:100%; border:0; vertical-align:top; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select: none; }
-body { min-width:1024px; font:normal 14px 'NanumSquare',sans-serif; color:#555; letter-spacing:-0.3px;}
+body { min-width:1024px; font:normal 14px 'NanumSquare',sans-serif; color:#555;}
 table { width:100%; border-collapse:collapse; font:normal 14px 'NanumSquare',sans-serif; color:#333; }
 input,select,textarea,button { font:normal 14px 'NanumSquare',sans-serif; color:#555; }
 
 #container { padding-top:101px; position: relative; background-color: white; font-family:'NanumSquare';}
-#container h2 { margin-bottom:58px; font-size:5vh; font-weight:700; color:#292c25; text-align:center; letter-spacing:-1px; align-content: center; color: #66CC66;}
-.backgroundImage { background-image: url("image/Facilities.jpg"); background-size: cover; height: 20vh; width: 130.05vh; }
+#container h2 { margin-bottom:58px; font-size:5vh; font-weight:700; color:#292c25; text-align:center; align-content: center; color: #66CC66;}
+
+.backgroundImage { background-image: url("image/Facilities.jpg"); background-size: cover; height: 20vh; }
 .backgroundImage > h2 { height: 25vh; padding-top: 23px;}
 
 #contents { width:960px; padding:70px 0 100px; margin:0 auto; }
-
-.item_02 > ul > li { padding-top:50px; overflow:hidden; }
-.item_02 > ul > li:first-child { padding-top:0; }
-
-.item_02 > ul > li .txt { width:385px; height:260px; display:table; }
-.item_02 > ul > li .txt dl { display:table-cell; vertical-align:middle; }
-.item_02 > ul > li .txt dl dt { font-size:19px; font-weight:700; color:#292c25; }
-.item_02 > ul > li .txt dl dd { margin-top:12px; font-size:15px; line-height:150%; color:#666; }
-.item_02 > ul > li .txt dl dd.info { margin-top:5px; font-size:12px; color:#888; }
-.item_02 > ul > li .txt dl dd.link { margin-top:20px; }
-.item_02 > ul > li .txt dl dd.link a { display:inline-block; width:100px; border:1px solid #b2b2b2; font-size:13px; font-weight:500; line-height:34px; color:#56991f; text-align:center; }
-.item_02 > ul > li .txt dl dd.link a:hover { color:#fff; background:#56991f; }
-.item_02 > ul > li .img { width:520px; height: 260px;}
-.item_02 > ul > li.left .img { float:left; }
-.item_02 > ul > li.left .txt { float:right; padding-left:50px; }
-
-.item_02 > ul > li.right .img { float:right; }
-.item_02 > ul > li.right .txt { float:left; padding-right:55px; }
 
 .article { margin-top:35px; }
 .article .img { overflow:hidden; max-width: 100%}
 .article .img p { width:475px; float:left; position:relative; }
 .article .img p:first-child { margin-right:10px; }
-.article .img p span { width:104px; position:absolute; left:0; top:0; font-size:13px; font-weight:500; line-height:38px; color:#fff; text-align:center; background:rgba(0,0,0,0.4); }
+.article .img p span { width:104px; position:absolute; left:0; top:0; font-size:13px;
+ font-weight:500; line-height:38px; color:#fff; text-align:center; background:rgba(0,0,0,0.4); }
 .article dl { margin-top:30px; }
 .article dl dt { font-size:20px; font-weight:700; color:#292c25; }
 .article dl dd { margin-top:12px; font-size:15px; line-height:150%; color:#666; }
 .article dl dd.info { margin-top:12px; font-size:14px; color:#888; }
 
 
+.left_right > ul > li { padding-top:50px; overflow:hidden; }
+.left_right > ul > li:first-child { padding-top:0; }
 
-a { border:0; text-decoration:none; font:normal 14px 'NanumSquare',sans-serif; color:#333; letter-spacing:-0.3px; cursor: pointer;}
+.left_right > ul > li .txt { width:385px; height:260px; display:table; }
+.left_right > ul > li .txt dl { display:table-cell; vertical-align:middle; }
+.left_right > ul > li .txt dl dt { font-size:19px; font-weight:700; color:#292c25; }
+.left_right > ul > li .txt dl dd { margin-top:12px; font-size:15px; line-height:150%; color:#666; }
+.left_right > ul > li .txt dl dd.info { margin-top:5px; font-size:12px; color:#888; }
+.left_right > ul > li .txt dl dd.link { margin-top:20px; }
+.left_right > ul > li .txt dl dd.link a { display:inline-block; width:100px; border:1px solid #b2b2b2;
+ font-size:13px; font-weight:500; line-height:34px; color:#56991f; text-align:center; }
+.left_right > ul > li .txt dl dd.link a:hover { color:#fff; background:#56991f; }
+.left_right > ul > li .img { width:520px; height: 260px;}
+.left_right > ul > li.left .img { float:left; }
+.left_right > ul > li.left .txt { float:right; padding-left:50px; }
+
+.left_right > ul > li.right .img { float:right; }
+.left_right > ul > li.right .txt { float:left; padding-right:55px; }
+
+
+a { border:0; text-decoration:none; font:normal 14px 'NanumSquare',sans-serif; color:#333; cursor: pointer;}
+
 /* modal Css */
 #mapsLayerBackground { position: absolute; z-index: 1;}
 #mapsLayerPoint { position: relative; z-index: 100; }
@@ -103,7 +107,7 @@ div.modal-footer { position: relative; z-index: 9999; }
 	    </div>
         <div id="contents">
             <div id="sub_01" class="body">
-                <div class="item_01">
+                <div class="middle">
                     <div class="article">
                         <div class="img">
                             <p class="left"><img src="image/FacilitiesImage/parking_01_01.jpg" /><span class="nts">인천방향(상행)</span></p>
@@ -116,7 +120,7 @@ div.modal-footer { position: relative; z-index: 9999; }
                         </dl>
                     </div>
                 </div>
-         		<div class="item_02">
+         		<div class="left_right">
                     <ul>
                         <li class="left">
                             <div class="img">
@@ -417,7 +421,7 @@ div.modal-footer { position: relative; z-index: 9999; }
 		</div>
  	</div>
  	
- 	<div class="layout info"><jsp:include page="../layout-index/info.jsp" /></div>
+ 	
  	
 </body>
 </html>

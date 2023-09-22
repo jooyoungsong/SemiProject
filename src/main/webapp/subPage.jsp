@@ -145,6 +145,6 @@ myimg = dto.getImage();
 <div class="layout header">
 	<jsp:include page="layout-subPage/header.jsp"/>
 </div>
-
+<div class="layout info"><jsp:include page="layout-subPage/info.jsp" /></div>
 </body>
 </html>
