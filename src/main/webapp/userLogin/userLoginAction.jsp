@@ -41,10 +41,13 @@
 		Date today=sdf.parse(sdfNow);				//string을 date로 변환
 		Date logindate=sdf.parse(lastLogin);
 		
-		int dif = (int)((today.getTime()-logindate.getTime())/(60*1000));			//date를 int로 변환해서 현재와 마지막로그인 차이 계산
+		
+		System.out.println("오늘날짜: "+today.getTime()+"\n마지막 로그인: "+logindate.getTime());
+		
+		int dif = (int)((today.getTime()-logindate.getTime())/(60*1000));					//date를 int로 변환해서 현재와 마지막로그인 차이 계산
 		System.out.println("날짜차이 : "+dif);
 		
-		if(dif>=1){
+		if(dif>=10){
 			pageContext.getSession().setAttribute("userId", userId);
 			pageContext.getSession().setAttribute("uSave",uSave);
 			response.sendRedirect("../index.jsp?main=userLogin/humanPage.jsp");

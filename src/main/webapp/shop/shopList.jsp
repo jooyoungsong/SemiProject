@@ -27,7 +27,7 @@
 		margin-top: 10px;
 		cursor: pointer;
 		float: left;
-		font-family: 'nanumsquareround',sans-serif;;
+		font-family: 'nanumsquareround',sans-serif;
 	}
 </style>
 </head>
@@ -47,7 +47,7 @@ List<ShopDto> list=dao.getAllShops(s_id);
 			ShopDto dto=list.get(i);
 	%>
 			<td>
-				<div style="background-color: white;"align="center" class="shopdiv" s_id="<%=dto.getS_id()%>">
+				<div style="background-color: white;" align="center" class="shopdiv" s_id="<%=dto.getS_id()%>">
 					<img src="save/<%=dto.getS_image() %>" style="width: 186px; height: 186px;">
 					<b style="font-size: 13px; background-color: white;"><%=dto.getShop_name() %></b>
 				</div>
@@ -62,7 +62,6 @@ List<ShopDto> list=dao.getAllShops(s_id);
 </tr>
 </table>
 </div>
-
 		<script type="text/javascript">
 			$("div.shopdiv").click(function(){
 				var s_id=$(this).attr("s_id");

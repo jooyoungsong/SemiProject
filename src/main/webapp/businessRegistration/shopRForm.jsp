@@ -105,41 +105,6 @@
                 $("#s_number1").focus();
 		    }
 		});
-		
-		$("#spchk").click(function(){
-			
-			var s_pass1=$("#s_pass1").val();
-			var s_pass2=$("#s_pass2").val();
-			
-			/* ^: 입력 문자열의 시작을 나타냅니다.
-			(?=.*[a-zA-Z]): 적어도 하나의 영문 대소문자 알파벳이 포함되어야 함을 나타냅니다.
-			(?=.*\d): 적어도 하나의 숫자가 포함되어야 함을 나타냅니다.
-			.{4,16}: 비밀번호는 최소 4자에서 16자 사이의 길이여야 함을 나타냅니다.
-			$: 입력 문자열의 끝을 나타냅니다.
-			/: 패턴의 시작과 끝 표시
-			\d는 다음과 같은 패턴과 일치합니다:
-
-			0, 1, 2, 3, 4, 5, 6, 7, 8, 9와 같은 숫자 문자.
-			문자열 내에 숫자가 포함되어 있는지 확인하는 데 사용됩니다. */
-			
-			var passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{4,16}$/;
-			
-			if(s_pass1!=s_pass2)
-			{
-				$("#passprint").text("비밀번호가 다릅니다");
-				$("#passprint").css("color","red");
-			}
-			else if(!passwordRegex.test(s_pass1))
-			{
-				$("#passprint").text("비밀번호는 영문 대소문자 및 숫자를 포함하여 4자~16자로 입력해주세요");
-				$("#passprint").css("color","red");
-			}
-			else if(s_pass1==s_pass2 && s_pass2.length!=0)
-			{
-				$("#passprint").text("비밀번호가 일치합니다");
-				$("#passprint").css("color","green");
-			}
-		});
 	});
 	
 	function checkpass(v)
@@ -164,8 +129,6 @@
 				v.s_pass1.value="";
 				v.s_pass.focus();
 				return false;
-				/* $("#passprint").text("비밀번호가 다릅니다");
-				$("#passprint").css("color","red"); */
 			}
 			else if(!passwordRegex.test(v.s_pass.value))
 			{

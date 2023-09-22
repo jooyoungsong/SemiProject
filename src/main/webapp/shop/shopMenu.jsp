@@ -65,9 +65,6 @@
 </style>
 </head>
 <%
-String s_id=request.getParameter("s_id");
-MenuDao dao=new MenuDao();
-List<MenuDto> list=dao.selectMenu(s_id);
 String loginok=(String)session.getAttribute("loginok");
 String id=(String)session.getAttribute("id");
 String grade=(String)session.getAttribute("grade");
@@ -78,9 +75,12 @@ UserDao udao=new UserDao();
 
 UserDto udto=udao.getData(id);
 
+String s_id=request.getParameter("s_id");
+MenuDao dao=new MenuDao();
+List<MenuDto> list=dao.selectMenu(s_id);
+
 List<String> categorylist=new ArrayList<String>();
 categorylist=dao.getCategory(s_id);
-System.out.println(categorylist.size());
 %>
 <body>
 <script type="text/javascript">
@@ -89,10 +89,8 @@ System.out.println(categorylist.size());
 			var id=$("#id").val();
 			var s_id=$("#s_id").val();
 			var loginok=$("#loginok").val();
-			//alert(loginok);
 			if(loginok=='null'){
 				$("#my-modal").click();
-				//alert("누름");
 			}else{
 				location.href="../order/orderCart.jsp?s_id="+s_id;
 			}
@@ -139,7 +137,6 @@ System.out.println(categorylist.size());
 			<input type="hidden" class="s_id" value="<%=s_id%>">
 
 
-
 <div align="center" style="margin-top: 5%; margin-bottom: 3%;" id="allbody">
 	<table style="width: 800px;">
 		<tr>
@@ -172,8 +169,6 @@ System.out.println(categorylist.size());
 		$("div.menudiv").click(function(){
 			var sang_num=$(this).attr("sang_num");
 			var s_id=$(".s_id").val();
-			//alert(s_id);
-			//alert(sang_num);
 				
 			window.open("detailPage.jsp?sang_num="+sang_num+"&s_id="+s_id,"_self","width=900, height=700, scrollbars=yes");
 		});
@@ -181,15 +176,12 @@ System.out.println(categorylist.size());
 		$(document).on("click","div.new_menudiv",function(){
 			var sang_num=$(this).attr("sang_num");
 			var s_id=$(".s_id").val();
-			//alert(s_id);
-			//alert(sang_num);
 				
 			window.open("detailPage.jsp?sang_num="+sang_num+"&s_id="+s_id,"_self","width=900, height=700, scrollbars=yes");
 		});
 		
 		$(".rbtn").click(function(){
 			var eng_category=$(this).val();
-			//alert(category);
 			if(eng_category=="All"){
 				$("#allbody").show();
 				$("#menubody").html("");
@@ -213,7 +205,6 @@ System.out.println(categorylist.size());
 				        	 if(item.m_score%1==0){
 									item.m_score+=".0";
 							}
-				        	 //alert(item.sang_num);
 				        	 s+="<td>"
 								s+="<div align='center' class='new_menudiv' sang_num='"+item.sang_num+"'>"
 									s+="<img src='../save/"+item.m_image+"' style='width: 250px; height: 250px;'><br>"

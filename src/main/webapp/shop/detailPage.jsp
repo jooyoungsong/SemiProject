@@ -73,7 +73,7 @@ $(function(){
 	$("#btnadd").click(function(){
 		var content=$(".content").val();
 		content=content.replace(/(?:\r\n|\r|\n)/g, '<br>');	
-		alert("["+content.trim()+"]");	
+		//alert("["+content.trim()+"]");	
 		if(content.trim()==null||content.trim()==""){
 			alert("값을 입력하시오");
 			return false;
@@ -115,6 +115,7 @@ function list(){
 		success:function(data){
 			//댓글 갯수 입력
 			$("b.acount>span").text(data.length);
+			$(".ansCnt").text(data.length);
 			var login="<%=loginok%>";
 			var id="<%=id%>";
 			//출력
@@ -182,7 +183,7 @@ function list(){
 			</tr>
 			<tr align="center">
 			 <th>
-			 	<b><%=dto.getMenu() %>&nbsp;&nbsp;★</b><b class="mScore"><%=dto.getM_score() %></b>
+			 	<b><%=dto.getMenu() %></b><br><b>★</b><b class="mScore"><%=dto.getM_score() %></b><b>(<span class="ansCnt"></span>명)</b>
 			 </th>
 			</tr>
 			<tr>
