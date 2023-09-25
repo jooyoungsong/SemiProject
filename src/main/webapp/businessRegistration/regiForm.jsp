@@ -43,12 +43,12 @@
 <body>
 	<div style="width: 126.27vh; height: 62.5vh; border: 0.1vh solid gray; background-color: gold;" align="center" class="regibox">
 			<img src="<%=root %>/image/usericon.png" style="width: 25vh;" class="user-regi">
-			<img alt="" src="<%=root %>/image/expressicon.png" style="width: 25vh; margin-left: 8.75vh;" class="ex-regi">
-			<img alt="" src="<%=root %>/image/shopicon.png" style="width: 25vh; margin-left: 8.75vh;" class="shop-regi">
+			<img alt="" src="<%=root %>/image/expressicon.png" style="width: 25vh; margin-left: 10%;" class="ex-regi">
+			<img alt="" src="<%=root %>/image/shopicon.png" style="width: 25vh; margin-left:10%;" class="shop-regi">
 			
-			<h3 style="margin-left: 19vh; font-size: 3.5vh;">개인 회원가입</h3>
-			<h3 style="margin-left: 15.5vh; font-size: 3.5vh;">휴게소 사업자<br>회원가입</h3>
-			<h3 style="margin-left: 15vh; font-size: 3.5vh;">상가 회원가입</h3>
+			<h3 style="margin-left: 11%; font-size: 3.5vh;">개인 회원가입</h3>
+			<h3 style="margin-left: 13%; font-size: 3.5vh;">휴게소 사업자<br>회원가입</h3>
+			<h3 style="margin-left: 13%; font-size: 3.5vh;">상가 회원가입</h3>
 	</div>
 </body>
 </html>
