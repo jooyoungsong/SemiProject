@@ -115,7 +115,7 @@ categorylist=dao.getCategory(s_id);
 				<b class="name" style="margin-left: 50px;"><%=udto.getU_name() %>님 환영합니다!</b>
 				<%
 				}
-			if(grade.equals("user")||grade.equals("")){
+			if(grade.equals("user")||grade.equals("")||loginok==null){
 			%>
 			<button class="orderBtn">주문하기</button>
 			<%

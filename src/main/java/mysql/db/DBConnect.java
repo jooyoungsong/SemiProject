@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class DBConnect {
 	
 	//driver,url,계정,비밀번호
-	static final String MYSQL_URL="jdbc:mysql://semi.cg8xdzaj3zm9.us-east-1.rds.amazonaws.com:3306/semi?serverTimezone=Asia/Seoul";
+	static final String MYSQL_URL="jdbc:mysql://localhost:3306/semi_project?serverTimezone=Asia/Seoul";
 	
 	//driver
 	String driver="com.mysql.cj.jdbc.Driver";
@@ -28,7 +28,7 @@ public class DBConnect {
 	public Connection getConnection() {
 		Connection conn=null;
 		try {
-			conn = DriverManager.getConnection(MYSQL_URL, "adminsjy", "ttkddyd070615!");
+			conn = DriverManager.getConnection(MYSQL_URL, "ssung2sin", "a1234");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

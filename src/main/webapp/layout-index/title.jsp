@@ -87,7 +87,7 @@ if(loginok!=null){
 	titleName=udao.allSelect(grade, id, name, selectId);
 }
 
-
+System.out.println(titleName);
 %>
 <script type="text/javascript">
 $(function(){

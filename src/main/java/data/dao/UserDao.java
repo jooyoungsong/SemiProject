@@ -177,6 +177,8 @@ public class UserDao {
 		   
 		   String sql="select "+name+" from "+grade+" where "+selectId+"='"+id+"'";
 		   
+		   System.out.println(sql);
+		   
 		   try {
 			stmt=conn.createStatement();
 			rs=stmt.executeQuery(sql);
