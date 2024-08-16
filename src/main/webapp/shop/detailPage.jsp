@@ -64,6 +64,8 @@ select::-ms-expand {
 	String s_id=request.getParameter("s_id");
 	System.out.println(s_id);
 	NumberFormat formatter=new DecimalFormat("0.##");
+	
+	System.out.println(loginok);
 %>
 <script type="text/javascript">
 $(function(){
@@ -127,7 +129,7 @@ function list(){
 				s+="<div class='textAnswer"+item.idx+" textAnswer'></div>"
 				s+="<table class='answer"+item.idx+" answer' style='width:600px;'><tr><td>"+item.u_id+" ["+item.starScore+"]</td><td><span style='float:right'>";
 				s+="<input type='hidden' class='hiddenStar"+item.idx+"' value='"+item.starScore+"'>"
-				if(login!=null&&id==item.u_id){
+				if(login!='null'&&id==item.u_id){
 					s+="<i style='color:green; cursor:pointer;' idx="+item.idx+" class='bi bi-pencil-square amod'></i>&nbsp";
 					s+="<i style='color:red; cursor:pointer;' idx="+item.idx+" class='bi bi-trash adel'></i></span></td></tr>";
 				}
@@ -193,7 +195,7 @@ function list(){
         			<input type="hidden" name="sang_num" id="sang_num" value="<%=sang_num %>">
          			<input type="hidden" name="u_id" id="u_id" value="<%=id%>">
          			<%
-					if(idchk==1){
+					if(idchk==1&&loginok!=null){
 					%>
         				<select style="width: 95px; margin-top: 10px; margin-left:10px;" class="select">
         					<option name="starScore" value="1">★

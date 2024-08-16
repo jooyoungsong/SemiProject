@@ -56,7 +56,7 @@
 		
 		dao.updateLL_date(userId, sdfNow);
 		
-		response.sendRedirect("../index.jsp");
+		response.sendRedirect("../shop/shopMenu.jsp?s_id="+s_id);
 		}
 	} else{%> <!--로그인 실패 시 -->
 		<script type="text/javascript">

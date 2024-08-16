@@ -47,7 +47,7 @@
 		int dif = (int)((today.getTime()-logindate.getTime())/(60*1000));					//date를 int로 변환해서 현재와 마지막로그인 차이 계산
 		System.out.println("날짜차이 : "+dif);
 		
-		if(dif>=10){
+		if(dif>=100){
 			pageContext.getSession().setAttribute("userId", userId);
 			pageContext.getSession().setAttribute("uSave",uSave);
 			response.sendRedirect("../index.jsp?main=userLogin/humanPage.jsp");
